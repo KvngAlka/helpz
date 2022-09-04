@@ -6,11 +6,13 @@ export default function Home() {
 
   const {state} = useStateValue();
 
-  console.log(state)
+
 
   return (
     <div>
-
+      {
+        state.user?.username
+      }
     </div>
   )
 }

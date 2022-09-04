@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 import AuthCard from '../../lib/components/auth_card'
@@ -23,6 +24,9 @@ const SignUp = () => {
     }
   return (
     <div className='main_cont grid_center' style={{backgroundColor : 'var(--bg-primary-10)'}}>
+        <Head>
+            <title>Helpz - Sign Up</title>
+        </Head>
 
         <div  style={{display : 'flex', flexDirection : 'column', minWidth : '500px', alignItems : 'center'}}>
             <Logo/>

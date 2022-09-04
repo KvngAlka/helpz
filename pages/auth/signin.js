@@ -1,12 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AuthCard from '../../lib/components/auth_card'
 import {useRouter} from 'next/router'
 import Logo from '../../lib/components/logo';
+import { useStateValue } from '../../lib/state_manager/contextApi';
+import { SIGNIN } from '../../lib/state_manager/constants';
+import Head from 'next/head';
 
 const Signin = () => {
 
     const [userData, setUserData] = useState({username : "", password : ""});
     const navigate = useRouter();
+    const {state,dispatch} = useStateValue()
+
+
+    useEffect(()=>{
+        if(state.user){
+            navigate.push('/')
+        }
+    },[state.user])
 
     const onDataChange = (e)=>{
         const {name, value} = e.target;
@@ -19,10 +30,13 @@ const Signin = () => {
 
     const onDataSubmit = (e)=>{
         e.preventDefault();
-        alert(`Username : ${userData.username}  \n Password : ${userData.password}`)
+        dispatch({type : SIGNIN, payLoad : userData})
     }
   return (
     <div className='main_cont grid_center' style={{backgroundColor : 'var(--bg-primary-10)'}}>
+        <Head>
+            <title>Helpz - Sign In</title>
+        </Head>
         <div style={{display : 'flex', flexDirection : 'column', minWidth : '500px', alignItems : 'center'}}>
             <Logo/>
             <AuthCard title={'Sign In'}>
