@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import AuthCard from "../../lib/components/auth_card"
 import Logo from "../../lib/components/logo";
 
