@@ -1,9 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap');
+
+
+:root{
+  --primary-color : #FF5E5E;
+  --secondary-color : #9121C2;
+
+  --white : white;
+  --black : rgb(22, 22, 22);
+
+
+
+  --bg-white : var(--white);
+  --bg-primary-10 : #ff5e5e10 ;
+
+  --bg-img-url : url('https://www.courier.com/banner-pattern.svg');
+  --primary-bg : linear-gradient(to left, var(--primary-color), var(--secondary-color));
+  --box-shadow-primary : 0 4px 14px 0 var(--bg-primary-10);
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  
 }
 
 a {
@@ -13,8 +35,66 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  font-family: 'Montserrat', sans-serif;
 }
 
+.main_cont{
+  width: 100%;
+  min-height: 100vh;
+}
+
+.grid_center{
+  display: grid;
+  place-items: center;
+}
+
+
+
+h1,h2,h3,h4,h5,h6{
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 52px;
+  background: var(--primary-bg);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 20px;
+}
+
+input{
+  border: 0.1px solid var(--black);
+  padding: 12px;
+  width: 100%;
+  height: 60px;
+  border-radius: 15px;
+  outline: none;
+}
+
+input:focus-within{
+  border: 5px solid var(--primary-color);
+  
+}
+
+
+button{
+  width: 100%;
+  height: 70px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn_primary{
+  background: var(--primary-bg);
+  color: var(--white);
+  font-size: 20px;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
