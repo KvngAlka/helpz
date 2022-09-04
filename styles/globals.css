@@ -9,9 +9,11 @@
   --black : rgb(22, 22, 22);
 
 
+  --text-color : var(--black);
 
   --bg-white : var(--white);
   --bg-primary-10 : #ff5e5e10 ;
+  --bg-light : var(--white);
 
   --bg-img-url : url('https://www.courier.com/banner-pattern.svg');
   --primary-bg : linear-gradient(to left, var(--primary-color), var(--secondary-color));
@@ -25,6 +27,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
+    color: var(--text-color);
+    background-color: var(--bg-primary-10);
   
 }
 
@@ -44,6 +48,7 @@ a {
 .main_cont{
   width: 100%;
   min-height: 100vh;
+  padding: 20px;
 }
 
 .grid_center{
@@ -96,11 +101,15 @@ button{
   font-size: 20px;
 }
 @media (prefers-color-scheme: dark) {
+  :root{
+    --bg-light : rgb(27, 27, 27);
+    --text-color : var(--white);
+  }
   html {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: var(--text-color);
+    background: var(--black);
   }
 }

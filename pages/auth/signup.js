@@ -33,7 +33,7 @@ const SignUp = () => {
         dispatch({type : SIGNIN, payLoad : userData})
     }
   return (
-    <div className='main_cont grid_center' style={{backgroundColor : "var(--bg-primary-10)"}}>
+    <div className='main_cont grid_center'>
         <Head>
             <title>Helpz - Sign Up</title>
         </Head>

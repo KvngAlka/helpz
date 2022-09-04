@@ -5,7 +5,7 @@
     border-radius: 15px;
     position: relative;
     padding: 20px;
-    background-color: var(--white);
+    background-color: var(--bg-light);
     box-shadow: var(--box-shadow-primary);
 }
 .notch_cont{
@@ -38,7 +38,7 @@
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    background-color: var(--white);
+    background-color: var(--bg-light);
     margin-bottom: calc(-130px / 2);
     padding: 10px;
     overflow: hidden;
