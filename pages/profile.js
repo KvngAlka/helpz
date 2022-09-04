@@ -28,7 +28,7 @@ const Profile = () => {
             <div className={styles.profile_cont}>
                 <div className={styles.top}>
                     <div className={styles.profile_img}>
-                        <img src={url} layout='fill' objectFit='cover'  />
+                        <img src={url} alt='' />
                     </div>
                 </div>
 
