@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
 import AuthCard from "../../lib/components/auth_card"
-import {useRouter} from 'next/router'
-import Logo from '../../lib/components/logo';
-import { useStateValue } from '../../lib/state_manager/contextApi';
-import { SIGNIN } from '../../lib/state_manager/constants';
-import Head from 'next/head';
+import {useRouter} from "next/router"
+import Logo from "../../lib/components/logo";
+import { useStateValue } from "../../lib/state_manager/contextApi";
+import { SIGNIN } from "../../lib/state_manager/constants";
+import Head from "next/head";
 
 const Signin = () => {
 
@@ -52,7 +52,7 @@ const Signin = () => {
                 </button>
 
                 <div>
-                    <h4>Don't have an account?  <span onClick={()=> navigate.push("/auth/signup")}>Sign Up</span></h4>
+                    <h4>{`Don't have an account?`}  <span onClick={()=> navigate.push("/auth/signup")}>Sign Up</span></h4>
                 </div>
             </AuthCard>
         </div>

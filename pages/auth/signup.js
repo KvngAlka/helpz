@@ -56,7 +56,7 @@ const SignUp = () => {
                 </button>
 
                 <div>
-                    <h4>Don't have an account?  <span onClick={()=> navigate.push("/auth/signin")}>Sign In</span></h4>
+                    <h4>{`Don't have an account? `} <span onClick={()=> navigate.push("/auth/signin")}>Sign In</span></h4>
                 </div>
             </AuthCard>
         </div>
