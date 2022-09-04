@@ -17,7 +17,7 @@ const Signin = () => {
         if(state.user){
             navigate.push('/')
         }
-    },[state.user])
+    },[state.user,navigate])
 
     const onDataChange = (e)=>{
         const {name, value} = e.target;
@@ -52,7 +52,7 @@ const Signin = () => {
                 </button>
 
                 <div>
-                    <h4>Don't have an account?  <span onClick={()=> navigate.push('/auth/signup')}>Sign Up</span></h4>
+                    <h4>Don't have an account?  <span onClick={()=> navigate.push("/auth/signup")}>Sign Up</span></h4>
                 </div>
             </AuthCard>
         </div>

@@ -9,6 +9,13 @@ const SignUp = () => {
     const [userData, setUserData] = useState({fullname : "",username : "", password : "",c_password : ""});
     const navigate = useRouter();
 
+
+    useEffect(()=>{
+        if(state.user){
+            navigate.push('/')
+        }
+    },[state.user,navigate])
+
     const onDataChange = (e)=>{
         const {name, value} = e.target;
         setUserData({
@@ -20,7 +27,6 @@ const SignUp = () => {
 
     const onDataSubmit = (e)=>{
         e.preventDefault();
-        alert(`Username : ${userData.username}  \n Password : ${userData.password}`)
     }
   return (
     <div className='main_cont grid_center' style={{backgroundColor : 'var(--bg-primary-10)'}}>
