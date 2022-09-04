@@ -37,7 +37,7 @@ const Signin = () => {
         <Head>
             <title>Helpz - Sign In</title>
         </Head>
-        <div style={{display : "flex", flexDirection : "column", minWidth : "500px", alignItems : "center"}}>
+        <div style={{display : "flex", flexDirection : "column", width : "100%", alignItems : "center"}}>
             <Logo/>
             <AuthCard title={"Sign In"}>
                 <div>
