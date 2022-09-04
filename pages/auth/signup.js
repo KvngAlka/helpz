@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import React, { useState } from 'react'
-import AuthCard from '../../lib/components/auth_card'
-import Logo from '../../lib/components/logo';
+import Head from "next/head";
+import { useRouter } from "next/router";
+import React, { useState } from "react"
+import AuthCard from "../../lib/components/auth_card"
+import Logo from "../../lib/components/logo";
 
 const SignUp = () => {
 

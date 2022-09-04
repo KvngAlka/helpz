@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import AuthCard from '../../lib/components/auth_card'
+import React, { useEffect, useState } from "react"
+import AuthCard from "../../lib/components/auth_card"
 import {useRouter} from 'next/router'
 import Logo from '../../lib/components/logo';
 import { useStateValue } from '../../lib/state_manager/contextApi';
@@ -33,21 +33,21 @@ const Signin = () => {
         dispatch({type : SIGNIN, payLoad : userData})
     }
   return (
-    <div className='main_cont grid_center' style={{backgroundColor : 'var(--bg-primary-10)'}}>
+    <div className="main_cont grid_center" style={{backgroundColor : "var(--bg-primary-10)"}}>
         <Head>
             <title>Helpz - Sign In</title>
         </Head>
-        <div style={{display : 'flex', flexDirection : 'column', minWidth : '500px', alignItems : 'center'}}>
+        <div style={{display : "flex", flexDirection : "column", minWidth : "500px", alignItems : "center"}}>
             <Logo/>
-            <AuthCard title={'Sign In'}>
+            <AuthCard title={"Sign In"}>
                 <div>
-                    <input type="text" placeholder='username' name='username' value={userData.username} onChange = {onDataChange} />
+                    <input type="text" placeholder="username" name="username" value={userData.username} onChange = {onDataChange} />
                 </div>
                 <div>
-                    <input type="password" placeholder='password' name='password' value={userData.password} onChange = {onDataChange} />
+                    <input type="password" placeholder="password" name="password" value={userData.password} onChange = {onDataChange} />
                 </div>
 
-                <button type='button' onClick={onDataSubmit} className='btn_primary'>
+                <button type="button" onClick={onDataSubmit} className="btn_primary">
                     Sign In
                 </button>
 
