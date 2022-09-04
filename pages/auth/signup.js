@@ -3,11 +3,14 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react"
 import AuthCard from "../../lib/components/auth_card"
 import Logo from "../../lib/components/logo";
+import { SIGNIN } from "../../lib/state_manager/constants";
+import { useStateValue } from "../../lib/state_manager/contextApi";
 
 const SignUp = () => {
 
     const [userData, setUserData] = useState({fullname : "",username : "", password : "",c_password : ""});
     const navigate = useRouter();
+    const {state, dispatch} = useStateValue();
 
 
     useEffect(()=>{
@@ -27,6 +30,7 @@ const SignUp = () => {
 
     const onDataSubmit = (e)=>{
         e.preventDefault();
+        dispatch({type : SIGNIN, payLoad : userData})
     }
   return (
     <div className='main_cont grid_center' style={{backgroundColor : "var(--bg-primary-10)"}}>
