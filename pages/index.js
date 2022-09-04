@@ -1,7 +1,6 @@
 import Navbar from '../lib/components/navbar';
 import { useStateValue } from '../lib/state_manager/contextApi'
 import styles from '../styles/Home.module.css'
-import Signin from './auth/signin'
 import robot from '../lib/assets/robot.png'
 import Image from 'next/image';
 import Head from 'next/head';

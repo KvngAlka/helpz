@@ -21,10 +21,11 @@
 }
 
 .chat_card,.chat_card_primary{
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
     height: 100px;
     border-radius: 0 20px 0 20px;
-    background: var(--primary-bg);
+    background: var(--primary-color);
     padding: 12px;
     
 }
