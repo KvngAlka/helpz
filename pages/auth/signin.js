@@ -15,7 +15,7 @@ const Signin = () => {
 
     useEffect(()=>{
         if(state.user){
-            navigate.push('/')
+            navigate.push("/")
         }
     },[state.user,navigate])
 
