@@ -5,6 +5,7 @@ import Logo from "../../lib/components/logo";
 import { useStateValue } from "../../lib/state_manager/contextApi";
 import { SIGNIN } from "../../lib/state_manager/constants";
 import Head from "next/head";
+import axiosInstance from "../../lib/state_manager/axios";
 
 const Signin = () => {
 
@@ -28,9 +29,13 @@ const Signin = () => {
     }
 
 
-    const onDataSubmit = (e)=>{
+    const onDataSubmit = async(e)=>{
         e.preventDefault();
-        dispatch({type : SIGNIN, payLoad : userData})
+        await axiosInstance.post("/api/auth/signin",userData)
+        .then((res)=>{ 
+            dispatch({type : SIGNIN, payLoad : res.data.msg})
+        })
+        .catch(err => { alert('Failed to login')})
     }
   return (
     <div className="main_cont grid_center">
@@ -39,7 +44,7 @@ const Signin = () => {
         </Head>
         <div style={{display : "flex", flexDirection : "column", width : "100%", alignItems : "center"}}>
             <Logo/>
-            <AuthCard title={"Sign In"}>
+            <AuthCard title={"Sign In"} submitFuntion = {onDataSubmit}>
                 <div>
                     <input type="text" placeholder="username" name="username" value={userData.username} onChange = {onDataChange} />
                 </div>

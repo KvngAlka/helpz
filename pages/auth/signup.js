@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react"
 import AuthCard from "../../lib/components/auth_card"
 import Logo from "../../lib/components/logo";
-import { SIGNIN } from "../../lib/state_manager/constants";
 import { useStateValue } from "../../lib/state_manager/contextApi";
+import axiosInstance from "../../lib/state_manager/axios";
 
 const SignUp = () => {
 
@@ -28,9 +28,14 @@ const SignUp = () => {
     }
 
 
-    const onDataSubmit = (e)=>{
+    const onDataSubmit = async(e)=>{
         e.preventDefault();
-        dispatch({type : SIGNIN, payLoad : userData})
+        axiosInstance.post("/api/auth/register", userData)
+        .then((res)=> {
+            console.log(res)
+            navigate.push('/auth/signin')
+        })
+        .catch(err => alert(err))
     }
   return (
     <div className='main_cont grid_center'>
@@ -40,12 +45,12 @@ const SignUp = () => {
 
         <div  style={{display : "flex", flexDirection : "column", width : '100%', alignItems : 'center'}}>
             <Logo/>
-            <AuthCard title={'Sign Up'}>
+            <AuthCard title={'Sign Up'} submitFuntion = {onDataSubmit} >
                 <div>
                     <input type="text" placeholder='full name' name='fullname' value={userData.fullname} onChange={onDataChange} />
                 </div>
                 <div>
-                    <input type="text" placeholder='username' name='username' value={userData.username} onChange={onDataChange} />
+                    <input type="text" placeholder='username e.g PSITC180013' name='username' value={userData.username} onChange={onDataChange} />
                 </div>
                 <div>
                     <input type="password" placeholder="password" name="password" value={userData.password} onChange={onDataChange} />

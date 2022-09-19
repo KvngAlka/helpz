@@ -1,12 +1,10 @@
 .chat_box{
     width: 100%;
     background-color: var(--bg-light);
-    border-radius: 20px;
+    
     box-shadow: var(--box-shadow);
-    min-height: 400px;
-    max-height: 700px;
-    max-width: 700px;
-    padding: 20px;
+    
+    min-height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
 }
@@ -35,7 +33,7 @@
 }
 
 .input_cont{
-    padding: 15px;
+    padding: 10px;
 }
 
 .input_field{
@@ -61,5 +59,13 @@
 @media (min-width : 768px) {
     .chat_view{
         min-height: 500px;
+    }
+
+    .chat_box{
+        border-radius: 20px;
+        min-height: 400px;
+        max-height: 700px;
+        max-width: 700px;
+        padding: 20px;
     }
 }

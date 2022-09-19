@@ -4,7 +4,7 @@
     min-height: 400px ;
     border-radius: 15px;
     position: relative;
-    padding: 20px;
+    padding: 12px;
     background-color: var(--bg-light);
     box-shadow: var(--box-shadow-primary);
 }
@@ -69,4 +69,11 @@
     cursor: pointer;
     font-weight: bold;
     color: var(--primary-color);
+}
+
+
+@media (min-width : 768px) {
+    .auth_card{
+        padding: 20px;
+    }
 }

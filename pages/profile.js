@@ -34,7 +34,11 @@ const Profile = () => {
 
                 <div className={styles.profile_detail}>
                     <div>
-                        <h4>Name</h4>
+                        <h4>Full Name</h4>
+                        <h2>{state.user?.fullname}</h2>
+                    </div>
+                    <div>
+                        <h4>User Name</h4>
                         <h2>{state.user?.username}</h2>
                     </div>
 

@@ -75,7 +75,7 @@ input{
   border: 0.1px solid var(--black);
   padding: 12px;
   width: 100%;
-  height: 60px;
+  height: 50px;
   border-radius: 15px;
   outline: none;
 }
@@ -88,7 +88,7 @@ input:focus-within{
 
 button{
   width: 100%;
-  height: 70px;
+  height: 50px;
   border-radius: 15px;
   border: none;
   outline: none;
@@ -111,5 +111,14 @@ button{
   body {
     color: var(--text-color);
     background: var(--black);
+  }
+}
+
+@media (min-width : 768px) {
+  input {
+    height: 60px;
+  }
+  button {
+    height: 70px;
   }
 }

@@ -24,7 +24,7 @@
   width: 100%;
   display: grid;
   place-items: center;
-  padding: 15px;
+  
 }
 
 
@@ -41,6 +41,7 @@
   .chat_box{
     padding: 20px;
     flex: 0.6;
+    padding: 15px;
   }
 }
 
