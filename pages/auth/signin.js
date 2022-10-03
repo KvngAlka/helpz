@@ -33,7 +33,10 @@ const Signin = () => {
         e.preventDefault();
         await axiosInstance.post("/api/auth/signin",userData)
         .then((res)=>{ 
+
+            localStorage.setItem("userData", JSON.stringify(res.data.msg));
             dispatch({type : SIGNIN, payLoad : res.data.msg})
+
         })
         .catch(err => { alert('Failed to login')})
     }

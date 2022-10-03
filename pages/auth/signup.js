@@ -17,7 +17,7 @@ const SignUp = () => {
         if(state.user){
             navigate.push("/")
         }
-    },[navigate])
+    },[navigate,state.user])
 
     const onDataChange = (e)=>{
         const {name, value} = e.target;

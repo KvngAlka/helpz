@@ -2,8 +2,11 @@
 
 
 :root{
-  --primary-color : #FF5E5E;
-  --secondary-color : #9121C2;
+  /* --primary-color : #FF5E5E;
+  --secondary-color : #9121C2; */
+
+  --primary-color : rgb(6, 55, 102);
+  --secondary-color : rgb(45, 168, 224);
 
   --white : white;
   --black : rgb(22, 22, 22);
@@ -12,7 +15,7 @@
   --text-color : var(--black);
 
   --bg-white : var(--white);
-  --bg-primary-10 : #ff5e5e10 ;
+  --bg-primary-10 : rgba(6, 56, 102, 0.103) ;
   --bg-light : var(--white);
 
   --bg-img-url : url('https://www.courier.com/banner-pattern.svg');

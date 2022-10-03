@@ -1,0 +1,37 @@
+
+.news_cont{
+    width: 100%;
+    min-height: calc(100vh - 60px);
+}
+
+.news_tile{
+    width: 100%;
+    max-width: 700px;
+    padding: 1rem;
+    border-radius: 1rem;
+    height: auto;
+    margin: auto;
+    display: flex;
+    background-color: var(--white);
+    margin-top: 1.5rem;
+
+}
+
+
+.avatar{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: var(--bg-primary-10);
+}
+
+.content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.content h1{
+    font-size: 20px;
+    padding: 0;
+}

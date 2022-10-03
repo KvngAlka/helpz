@@ -9,15 +9,18 @@ import styles from '../styles/Profile.module.css'
 const Profile = () => {
     const {state,dispatch} = useStateValue();
 
+
     const onLogout = ()=>{
         const isLogout = confirm('Are you sure you want to logout');
 
         if(isLogout){
             dispatch({type : LOGOUT})
+            localStorage.removeItem("userData");
         }
     }
 
     const url  = `https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc5OTk2ODUyMTMxNzM0ODcy/gettyimages-1229892983-square.jpg`
+
   return (
     <>
         <Head>
