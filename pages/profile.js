@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../lib/components/navbar'
 import { LOGOUT } from '../lib/state_manager/constants'
 import { useStateValue } from '../lib/state_manager/contextApi'
@@ -8,6 +8,7 @@ import styles from '../styles/Profile.module.css'
 
 const Profile = () => {
     const {state,dispatch} = useStateValue();
+    
 
 
     const onLogout = ()=>{
@@ -18,6 +19,10 @@ const Profile = () => {
             localStorage.removeItem("userData");
         }
     }
+
+    useEffect(()=>{
+        const temp = state?.user?.username?.split('/')
+    },[])
 
     const url  = `https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc5OTk2ODUyMTMxNzM0ODcy/gettyimages-1229892983-square.jpg`
 
