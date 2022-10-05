@@ -5,7 +5,7 @@ export default function handler(req, res) {
     { 
       title : "DUES PAYMENT",
       type : LINK_TYPE,
-      data : "You can pay your dues through this MOMO Number : 0249320695"
+      data : "You can pay your dues through this MOMO Number : 0249320695, ACCOUNT NAME : Dela Amegatse, REFRENCE : CITSA DUES"
     }
   )
 }
