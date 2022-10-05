@@ -1,12 +1,11 @@
-
 import { LINK_TYPE} from "../../../lib/state_manager/constants";
 
 export default function handler(req, res) {
   res.status(200).json(
     { 
-      title : "COURSE REGISTRATION",
+      title : "DUES PAYMENT",
       type : LINK_TYPE,
-      data : "Copy and paste the link to your browser to access the registration form : https://portal.ucc.edu.gh/frames/index.php "
+      data : "You can pay your dues through this MOMO Number : 0249320695"
     }
   )
 }

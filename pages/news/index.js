@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../../lib/components/navbar'
+import axiosInstance from '../../lib/state_manager/axios'
 import styles from '../../styles/News.module.css'
 
 
@@ -20,15 +21,14 @@ const NewsTile = ({title, description})=>{
 }
 
 const News = () => {
-
-  const listNews = [
-    {
-      id : "1", title : "Voting", description : "Voting commences on 13th October 2022"
-    },
-    {
-      id : "2", title : "SRC WEEK", description : "SRC celebrates SRC week called DIWALI"
+  const [listNews, setListNews] = useState([])
+  useEffect(()=>{
+    const fetchNews = async()=>{
+      await axiosInstance.get('/api/news').then(res => setListNews(res.data))
     }
-  ]
+
+    fetchNews();
+  })
   return (
     <>
       <Head>
