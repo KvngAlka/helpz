@@ -12,6 +12,7 @@ const Signin = () => {
     const [userData, setUserData] = useState({username : "", password : ""});
     const navigate = useRouter();
     const {state,dispatch} = useStateValue()
+    const [onLoad, setOnLoad] = useState(false);
 
 
     useEffect(()=>{
@@ -31,14 +32,16 @@ const Signin = () => {
 
     const onDataSubmit = async(e)=>{
         e.preventDefault();
+        setOnLoad(true)
         await axiosInstance.post("/api/auth/signin",userData)
         .then((res)=>{ 
 
             localStorage.setItem("userData", JSON.stringify(res.data.msg));
             dispatch({type : SIGNIN, payLoad : res.data.msg})
+            setOnLoad(false)
 
         })
-        .catch(err => { alert('Failed to login')})
+        .catch(err => { alert('Failed to login'); setOnLoad(false)})
     }
   return (
     <div className="main_cont grid_center">
@@ -56,7 +59,7 @@ const Signin = () => {
                 </div>
 
                 <button type="button" onClick={onDataSubmit} className="btn_primary">
-                    Sign In
+                    {onLoad ? "Signing in..." : "Sign In"}
                 </button>
 
                 <div>

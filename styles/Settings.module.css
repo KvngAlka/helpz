@@ -1,0 +1,19 @@
+.settings{
+    max-width: 500px;
+    margin: auto;
+}
+
+
+.settings form{
+    padding: 30px 15px;
+    border-radius: 15px;
+}
+
+.settings form input{
+    width: 100%;
+    margin: 15px;
+}
+
+.settings form h4{
+    text-align: start;
+}

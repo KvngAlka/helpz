@@ -1,4 +1,4 @@
-import { collection, doc, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { v4 } from "uuid";
 import { db } from "../../../lib/state_manager/firebase";
 

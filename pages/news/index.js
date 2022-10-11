@@ -7,10 +7,11 @@ import styles from '../../styles/News.module.css'
 
 
 const NewsTile = ({title, description})=>{
+  const url = `https://media-exp1.licdn.com/dms/image/C4D0BAQEm4BD0Y9I5Ww/company-logo_200_200/0/1626441111910?e=2147483647&v=beta&t=76qqWUWuqVjEhESUFvP2IfNyunS6pR0zo9C4LXgblII`
   return (
     <div className={styles.news_tile}>
         <div className={styles.avatar}>
-
+          <img src={url} alt="" />
         </div>
         <div className={styles.content}>
           <h1>{title}</h1>

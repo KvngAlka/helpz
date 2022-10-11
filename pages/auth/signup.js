@@ -11,6 +11,8 @@ const SignUp = () => {
     const [userData, setUserData] = useState({fullname : "",username : "", password : "",c_password : ""});
     const navigate = useRouter();
     const {state, dispatch} = useStateValue();
+    const [onLoad, setOnLoad] = useState(false);
+
 
 
     useEffect(()=>{
@@ -30,12 +32,13 @@ const SignUp = () => {
 
     const onDataSubmit = async(e)=>{
         e.preventDefault();
+        setOnLoad(true)
         axiosInstance.post("/api/auth/register", userData)
         .then((res)=> {
-            console.log(res)
             navigate.push('/auth/signin')
+            setOnLoad(false)
         })
-        .catch(err => alert(err))
+        .catch(err => {alert(err); setOnLoad(false)})
     }
   return (
     <div className='main_cont grid_center'>
@@ -61,7 +64,7 @@ const SignUp = () => {
                 </div>
 
                 <button type='button' onClick={onDataSubmit} className='btn_primary'>
-                    Sign Up
+                    {onLoad ? "Signing up..." : "Sign Up"}
                 </button>
 
                 <div>
