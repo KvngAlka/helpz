@@ -23,9 +23,12 @@ const NewsTile = ({title, description})=>{
 
 const News = () => {
   const [listNews, setListNews] = useState([])
+  const [onLoad, setOnLoad] = useState(true)
   useEffect(()=>{
     const fetchNews = async()=>{
-      await axiosInstance.get('/api/news').then(res => setListNews(res.data))
+      await axiosInstance.get('/api/news')
+      .then(res => setListNews(res.data))
+      .then(()=> setOnLoad(false))
     }
 
     fetchNews();
@@ -38,6 +41,12 @@ const News = () => {
       <Navbar/>
       <div className={styles.news_cont}>
         {
+          onLoad 
+          ?
+          <div>
+            <h2 style={{textAlign : 'center'}}>Loading...</h2>
+          </div>
+          :
           listNews.map((news,i)=> <NewsTile title = {news.title} description = {news.description}  key = {i}/>  )
         }
       </div>

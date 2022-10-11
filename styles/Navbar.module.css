@@ -25,9 +25,9 @@
     border-bottom: 3px solid var(--bg-light);
     
 }
-
+.nav_active,
 .nav_links a:hover{
-    border-bottom: 3px solid var(--primary-color);
+    border-bottom: 3px solid var(--primary-color) !important;
 }
 
 .img{
